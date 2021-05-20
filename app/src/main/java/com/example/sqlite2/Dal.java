@@ -21,21 +21,13 @@ public class Dal extends SQLiteAssetHelper {
     {
         SQLiteDatabase db = getWritableDatabase();
         String sql_INSERT = "INSERT INTO contacts (name, email, phone, street, city) values(?,?,?,?,?)";
-        Log.i("1", "WWWWWWWWWWWWWWWWWWWWWWWW");
         SQLiteStatement statement = db.compileStatement(sql_INSERT);
-        Log.i("name", name);
-        Log.i("email", email);
-        Log.i("phone", phone);
-        Log.i("street", street);
-        Log.i("city", city);
         statement.bindString(1, name);
         statement.bindString(2, email);
         statement.bindString(3, phone);
         statement.bindString(4, street);
         statement.bindString(5, city);
-        Log.i("1", "WWWWWWWWWWWWWWWWWWWWWWWW");
         Log.i("statement", statement.toString());
-        Log.i("1", "WWWWWWWWWWWWWWWWWWWWWWWW");
         statement.execute();
     }
 
